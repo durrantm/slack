@@ -6,4 +6,4 @@
 
 - To run all the tests:
 
-  `bundle exec rspec spec`
+  `rspec`
