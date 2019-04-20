@@ -1,0 +1,5 @@
+search: "input[aria-label='Search']"
+domain: 'input#domain'
+email: 'input#email'
+pw: 'input#password'
+sign_in: 'button#signin_btn'
