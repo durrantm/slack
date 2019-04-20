@@ -1,4 +1,4 @@
-#slack automation tryout
+# slack automation tryout
 
 - Use bundler to install the gems:
 
