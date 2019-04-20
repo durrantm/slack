@@ -9,6 +9,7 @@ require_relative 'support/page_object'
 Capybara.run_server = false
 Capybara.default_driver = :chrome
 Capybara.app_host = 'http://ultimate-weather.slack.com'
+Capybara.default_max_wait_time = 2
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome)

@@ -31,7 +31,6 @@ describe 'Logins work as expected', :type => :feature do
   it 'Prevents user from logging in if domain is not known', :sad do
     find(p.domain).send_keys('notvalidultimateweather')
     click_button('submit_team_domain')
-    sleep_short
     expect(page).to have_content "We couldn’t find your workspace"
   end
 
