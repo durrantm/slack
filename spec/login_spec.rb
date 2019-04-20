@@ -2,10 +2,6 @@ describe 'Logins work as expected', :type => :feature do
 
   p = PageObject.new('spec/support/locators.yml')
 
-  def sleep_short
-    sleep 1
-  end
-
   before :each do
     visit @root
   end

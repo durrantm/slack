@@ -5,6 +5,11 @@ require 'capybara/dsl'
 require 'webdrivers'
 require 'yaml'
 require_relative 'support/page_object'
+require_relative 'support/login_helper'
+require_relative 'support/general_helper'
+
+include GeneralHelper
+include LoginHelper
 
 Capybara.run_server = false
 Capybara.default_driver = :chrome
