@@ -1,4 +1,4 @@
-describe 'Channels', :type => :feature do
+describe 'Channel Management', :type => :feature do
 
   p = PageObject.new('spec/support/locators.yml')
 
@@ -10,13 +10,29 @@ describe 'Channels', :type => :feature do
     expect(page).to have_content "Channels"
   end
 
-  it "has lets me add a channel", :happy do
-    find("button[data-qa=channel_sidebar__plus__channels]").click
-    sleep 1
-    find "input#channel_create_title"
-    fill_in "channel_create_title", with: 'delete_me'
-    find("div[aria-label='Channel purpose']").send_keys 'delete_me'
-    sleep 10
+	describe "new channel" do
+
+		after(:each) do
+      delete_channel p
+		end
+
+		it "can be added", :happy do
+			find(p.add_channel).click
+			fill_in p.channel_title, with: 'delete_me'
+			find(p.channel_purpose).send_keys 'delete_me'
+			click_on p.save_channel
+      sleep_short
+			expect(page.text).to match(/You just created/)
+		end
+
+	end
+
+  def delete_channel p
+    find(p.channel_actions).click
+    find(p.additional_options).click
+    find(p.delete_channel).click
+    check p.delete_channel_checkbox
+    find(p.delete_action).click
   end
 
 end

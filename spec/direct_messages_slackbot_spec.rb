@@ -11,12 +11,12 @@ describe 'Direct messages with Slackbot work as expected', :type => :feature do
   end
 
   it "has a Direct Messages section with Slackbot", :smoke do
-    expect(find("a[aria-label='Slackbot (direct message, active)']")).to be
+    expect(find p.slackbot).to be
   end
 
   it "Clicking on Slackbot shows Slackbot as the channel in the channel header name", :happy do
     click_link('Slackbot')
-    expect(find('div#channel_name_container')).to have_content 'Slackbot'
+    expect(find p.slackbot_channel).to have_content 'Slackbot'
   end
 
 end

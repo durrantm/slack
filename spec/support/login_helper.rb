@@ -1,4 +1,5 @@
 module LoginHelper
+
   def sign_in p
     visit @root
     click_link('Sign in')
@@ -8,5 +9,11 @@ module LoginHelper
     find(p.email).send_keys("m2@snap2web.com")
     find(p.pw).send_keys("utahutah")
     find(p.sign_in).click
+    acknowledge_desktop_notifications p
   end
+
+  def acknowledge_desktop_notifications p
+    find(p.dismiss_banner).click
+  end
+
 end
