@@ -14,7 +14,7 @@ describe 'Thread Posting', :type => :feature do
     delete_post p, random_text
   end
 
-  it "lets you post a thread to a message in general", :happy do
+  pending "lets you post a thread to a message in general", :happy do
     find(p.message_post).send_keys 'test_message_' + random_text
     find(p.message_post).send_keys :enter
     find(p.last_message).click
