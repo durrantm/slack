@@ -18,10 +18,13 @@ describe 'Thread Posting', :type => :feature do
     find(p.message_post).send_keys 'test_message_' + random_text
     find(p.message_post).send_keys :enter
     find(p.last_message).click
-sleep 1
     find(p.start_thread).click
-sleep 2
-    first('div[data-qa=message_input')
+sleep 3
+    find(p.thread_textbox).send_keys('test_message_' + random_text)
+    find('div[data-qa=reply_container] div.ql-editor p')
+    find('div[data-qa=reply_container] div.ql-editor p').click
+    find('div[data-qa=reply_container] div.ql-editor p').send_keys('aaaa')
+    first('div[data-qa=message_input] span[data-qa=text-atom]').send_keys('zzzzzzzzzzzzzzzzzzz')
 sleep
 #    find(p.thread_textbox).click
 sleep 2
