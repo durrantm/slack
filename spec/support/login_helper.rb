@@ -13,7 +13,10 @@ module LoginHelper
   end
 
   def acknowledge_desktop_notifications p
-    find(p.dismiss_banner).click
+    sleep_medium
+    if all(p.dismiss_banner).count > 0
+      find(p.dismiss_banner).click
+    end
   end
 
 end

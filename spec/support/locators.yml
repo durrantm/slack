@@ -31,6 +31,11 @@ start_thread: 'button[data-qa=start_thread]'
 thread_textbox: 'div[data-qa=reply_container] div[data-qa=message_input] div.ql-editor'
 
 thread_textbox: 'span[data-qa=text-atom]'
+thread_textbox_FAKE: 'span[data-qa=text-atomXXXXXX]'
 thread_menu: 'span[data-qa=text-atom]'
 thread_optional_menu: 'button[data-qa=more_message_actions]'
+thread_new: 'div[data-qa=thread_flexpane] div[data-qa=reply_container] div.ql-editor'
+thread: 'div[data-qa=thread_flexpane] div[data-qa=message_container]'
+message: 'div[data-qa=message_container] span[data-qa=message-text]'
+
 
