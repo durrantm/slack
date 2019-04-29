@@ -23,13 +23,13 @@ describe 'Thread Posting', :type => :feature do
     find(p.thread_new).send_keys(random_text_thread)
     find(p.thread_new).send_keys :enter
     sleep_short
-    expect(find_all(p.thread)[-1].text.match (random_text_thread)).to be
-    sleep_short
+    first(p.thread, wait: 5)
+    expect(find_all(p.thread)[1].text.match (random_text_thread)).to be
   end
 
 	def delete_thread p
     begin
-		  first(p.thread_textbox).hover
+		  first(p.thread_textbox, wait: 5).hover
 		  all(p.thread_menu).last.hover
 		  all(p.thread_optional_menu).last.click
 		  click_on('Delete message')
