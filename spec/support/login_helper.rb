@@ -1,8 +1,7 @@
 module LoginHelper
 
   def sign_in p
-    visit @root
-    click_link('Sign in')
+    visit @login
     find(p.domain).send_keys('ultimateweather')
     click_button('submit_team_domain')
     sleep_short

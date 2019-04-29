@@ -17,7 +17,7 @@ include Helper
 
 Capybara.run_server = false
 Capybara.default_driver = :chrome
-Capybara.app_host = 'http://ultimate-weather.slack.com'
+Capybara.app_host = 'http://slack.com'
 Capybara.default_max_wait_time = 2
 
 Capybara.register_driver :chrome do |app|
@@ -28,8 +28,8 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
   config.order = 'random'
-  config.before(:each) do
-    @root = '/'
+  config.before(:all) do
+    @login = '/signin'
   end
   config.include Helper, type: :request
 end
