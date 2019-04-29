@@ -8,16 +8,17 @@ describe 'Channel Management', :type => :feature do
   end
 
   it "has a Channels section", :smoke do
-    expect(page).to have_content "Channels"
+    expect(page).to have_button "Channels"
+    expect(find(p.channels)).to be
   end
 
-  describe "new channel", :smoke do
+  describe "new channel" do
 
     after(:each) do
       delete_channel p
     end
 
-    it "can be added", :happy do
+    it "allows for a Channel to be added", :happy do
       find(p.add_channel).click
       fill_in p.channel_title, with: channel_name
       find(p.channel_purpose).send_keys 'delete_me'

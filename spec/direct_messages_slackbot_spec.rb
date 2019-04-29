@@ -41,6 +41,7 @@ describe 'Direct messages with Slackbot work as expected', :type => :feature do
       find(p.message_more_actions).click
       find(p.delete_message).click
       find(p.delete_message_confirm).click
+      sleep_short
       find(p.last_message).click
       find(p.message_more_actions).click
       find(p.delete_message).click
